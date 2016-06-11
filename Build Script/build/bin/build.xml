@@ -26,7 +26,7 @@
 	
 	<target name="Compile / javac (javac in rt.jar? + Ant Environment)" depends="JavaDoc"> <!-- Target -->
 	<echo message="Compile / javac (javac in rt.jar? + Ant Environment)"/> <!-- TASK -->
-	<javac srcdir="${src}" destdir="${bin}">
+	<javac srcdir="${src}" destdir="${bin}" includeantruntime="false">
 	</javac>
 	</target>
 	
