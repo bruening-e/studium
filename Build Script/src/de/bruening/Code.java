@@ -6,9 +6,19 @@ package de.bruening;
 
 public class Code {
 
-    public static void main (String[] args)
-    {
-         
-          System.out.println("Hello World!");
-    }
-}
+		public int min (int a, int b){
+			// return a-b+1; mit fehler
+			return a-b;
+		}
+		public int mult (int a, int b){
+			return a*b;
+		}
+		public int add (int a, int b){
+			return a+b;
+		}
+		public int div (int a, int b){
+		if (b == 0) throw new IllegalArgumentException("Dividend = 0");//faengt b=0 ab
+			return a/b;
+		}
+		
+	}
