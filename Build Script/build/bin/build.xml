@@ -1,0 +1,62 @@
+<project basedir="." default="Start" name="StartMyAntBuild.xml">
+	<property name ="Quelle" value="C:\Users\bruening-e\Documents\Studium\Softwaretechnik\workspace\LE Build\src" />
+	<property name ="src" value="C:\build\src"/>
+	<property name ="bin" value="C:\build\bin"/>
+	<property name ="Javadoc" value="C:\build\bin\javadoc"/>
+	<property name ="classpath" value="C:\build\bin" />
+	
+	<target name="Start" depends="Test"> <!-- Target -->
+	<echo message="Fertig"/>
+	</target>
+	
+	<target name="copy to tmpdir" depends="clean">   <!-- Target -->
+	<echo message="copy to tmpdir"/> 	<!-- TASK -->
+		<mkdir dir="${bin}"/>
+		<mkdir dir="${src}"/>
+		<copy todir="${src}">
+			<fileset dir="${Quelle}"/>
+		</copy>
+	</target>
+		
+	<target name="JavaDoc" depends="copy to tmpdir"> <!-- Target -->
+	<echo message="JavaDoc"/> <!-- TASK -->
+<!---	<javadoc sourcepath="${SRC}"  destdir="${Javadoc}">
+	</javadoc> -->
+	</target>
+	
+	<target name="Compile / javac (javac in rt.jar? + Ant Environment)" depends="JavaDoc"> <!-- Target -->
+	<echo message="Compile / javac (javac in rt.jar? + Ant Environment)"/> <!-- TASK -->
+	<javac srcdir="${src}" destdir="${bin}">
+	</javac>
+	</target>
+	
+	<target name="Jar" depends="Compile / javac (javac in rt.jar? + Ant Environment)"> <!-- Target -->
+	<echo message="Jar"/> <!-- TASK -->    
+	</target>
+	
+	<target name="Run / java" depends="Jar"> <!-- Target -->
+	<echo message="Run / java"/> <!-- TASK -->
+		<java classpath="classpath\de\bruening" classname="code.class">
+		</java>
+	</target>
+
+	<target name="Test" depends="Run / java"> <!-- Target -->
+	<echo message="Test"/> <!-- TASK -->
+	</target>
+	
+	<target name="clean"> <!-- Target -->
+	<echo message="Los geht's, jetzt wird aufgeräumt"/> <!-- TASK -->
+		<delete dir="C:\build\bin"/>
+		<delete dir="C:\build\src"/>
+	</target>
+		
+</project>
+
+<!-- 1. Start -->
+<!-- 2. clean -->
+<!-- 3 copy to tmpdir -->
+<!-- 4. JavaDoc -->
+<!-- 5. Compile / javac (javac in rt.jar? + Ant Environment) -->
+<!-- 6. Jar -->
+<!-- 7. Run / java -->
+<!-- 8. Test -->
