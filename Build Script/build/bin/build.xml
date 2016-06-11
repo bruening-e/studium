@@ -32,6 +32,7 @@
 	
 	<target name="Jar" depends="Compile / javac (javac in rt.jar? + Ant Environment)"> <!-- Target -->
 	<echo message="Jar"/> <!-- TASK -->    
+		<jar basedir="${src}" destfile="${bin}/code.jar"/>
 	</target>
 	
 	<target name="Run / java" depends="Jar"> <!-- Target -->
