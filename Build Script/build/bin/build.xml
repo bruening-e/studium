@@ -37,13 +37,12 @@
 	
 	<target name="Run / java" depends="Jar"> <!-- Target -->
 	<echo message="Run / java"/> <!-- TASK -->
-		<java classpath="${bin}" jar="${bin}/code.jar" fork="true">
-		</java>
+		<java classpath="${bin}" jar="${bin}/code.jar" fork="true"/>
 	</target>
 
 	<target name="Test" depends="Run / java"> <!-- Target -->
 	<echo message="Test"/> <!-- TASK -->
-		<junit ></junit>
+		<junit printsummary="yes" haltonfailure="no"/>
 	</target>
 	
 	<target name="clean"> <!-- Target -->
