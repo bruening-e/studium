@@ -42,7 +42,9 @@
 
 	<target name="Test" depends="Run / java"> <!-- Target -->
 	<echo message="Test"/> <!-- TASK -->
-		<junit printsummary="yes" haltonfailure="no"/>
+	<!--	<junit printsummary="yes" haltonfailure="no">
+		
+		</junit>  -->
 	</target>
 	
 	<target name="clean"> <!-- Target -->
