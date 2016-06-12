@@ -20,14 +20,12 @@
 		
 	<target name="JavaDoc" depends="copy to tmpdir"> <!-- Target -->
 	<echo message="JavaDoc"/> <!-- TASK -->
-	<javadoc sourcepath="${src}"  destdir="${Javadoc}" author="true" version="yes" classpath="C:\Program Files\Java\jdk1.8.0_92\bin\" >
-	</javadoc>
+		<javadoc sourcepath="${src}"  destdir="${Javadoc}" author="true" version="yes" classpath="C:\Program Files\Java\jdk1.8.0_92\bin\" />
 	</target>
 	
 	<target name="Compile / javac (javac in rt.jar? + Ant Environment)" depends="JavaDoc"> <!-- Target -->
 	<echo message="Compile / javac (javac in rt.jar? + Ant Environment)"/> <!-- TASK -->
-	<javac srcdir="${src}" destdir="${bin}" includeantruntime="false">
-	</javac>
+		<javac srcdir="${src}" destdir="${bin}" includeantruntime="false"/>
 	</target>
 	
 	<target name="Jar" depends="Compile / javac (javac in rt.jar? + Ant Environment)"> <!-- Target -->
@@ -49,8 +47,7 @@
 	
 	<target name="clean"> <!-- Target -->
 	<echo message="Los geht's, jetzt wird aufgeräumt"/> <!-- TASK -->
-		<delete dir="C:\build\bin"/>
-		<delete dir="C:\build\src"/>
+		<delete dir="C:\build"/>
 	</target>
 		
 </project>
