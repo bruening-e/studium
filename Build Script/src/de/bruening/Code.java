@@ -1,7 +1,7 @@
 package de.bruening;
 /**
 *	@author Eric Bruening
-*	@E-mail Eric.Bruening@dife.de
+*	@version 0.1
 **/
 
 public class Code {

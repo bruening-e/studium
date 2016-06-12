@@ -20,8 +20,8 @@
 		
 	<target name="JavaDoc" depends="copy to tmpdir"> <!-- Target -->
 	<echo message="JavaDoc"/> <!-- TASK -->
-<!---	<javadoc sourcepath="${SRC}"  destdir="${Javadoc}">
-	</javadoc> -->
+	<javadoc sourcepath="${src}"  destdir="${Javadoc}" author="true" version="yes" classpath="C:\Program Files\Java\jdk1.8.0_92\bin\" >
+	</javadoc>
 	</target>
 	
 	<target name="Compile / javac (javac in rt.jar? + Ant Environment)" depends="JavaDoc"> <!-- Target -->
@@ -43,6 +43,7 @@
 
 	<target name="Test" depends="Run / java"> <!-- Target -->
 	<echo message="Test"/> <!-- TASK -->
+		<junit ></junit>
 	</target>
 	
 	<target name="clean"> <!-- Target -->
